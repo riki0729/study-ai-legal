@@ -1,0 +1,144 @@
+/* Shared style for legal pages (privacy / terms / tokushoho).
+ * Plain, readable, no JS, no external fonts. Tested on iOS Safari +
+ * Chrome Android. Stays legible at 320px width. */
+
+:root {
+  --text: #111827;
+  --text-muted: #4b5563;
+  --bg: #ffffff;
+  --border: #e5e7eb;
+  --accent: #4f46e5;
+  --code-bg: #f3f4f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e5e7eb;
+    --text-muted: #9ca3af;
+    --bg: #0f172a;
+    --border: #1f2937;
+    --accent: #818cf8;
+    --code-bg: #1f2937;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans',
+    'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic UI', Meiryo,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+header.site {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  margin-bottom: 32px;
+}
+
+header.site nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  font-size: 14px;
+}
+
+header.site a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+header.site a:hover { color: var(--accent); }
+
+header.site a.active { color: var(--accent); font-weight: 600; }
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+.effective-date {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0 0 32px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 40px 0 16px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 28px 0 12px;
+}
+
+p { margin: 0 0 16px; }
+
+ul, ol {
+  margin: 0 0 16px;
+  padding-left: 1.5em;
+}
+
+li { margin: 0 0 6px; }
+
+li ul, li ol { margin-top: 6px; }
+
+strong { font-weight: 700; }
+
+a { color: var(--accent); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 20px;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+
+footer.site {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+footer.site a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin: 0 6px;
+}
+
+footer.site a:hover { color: var(--accent); }
